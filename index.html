@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS.ARCH - Inside a Computer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=Krona+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050608;
+            --bg-accent: #00ffcc;
+            --font-display: 'Krona One', sans-serif;
+            --font-body: 'Jura', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: var(--font-body);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 8vw, 4rem);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+        p {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 4rem;
+            letter-spacing: 1px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            border: 1px solid var(--bg-accent);
+            color: var(--bg-accent);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.3s ease;
+            background: transparent;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+        }
+        .cta-button:hover {
+            background: var(--bg-accent);
+            color: var(--bg-dark);
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+        }
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+        /* Glow */
+        .glow {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(0,255,204,0.1) 0%, rgba(5,6,8,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="glow"></div>
+    
+    <h1>SYS.ARCH V.01</h1>
+    <p>Interactive Computer Architecture Experience</p>
+    
+    <a href="./CPU_Experience/index.html" class="cta-button">INITIATE SEQUENCE</a>
+</body>
+</html>
