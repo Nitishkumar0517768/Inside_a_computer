@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside a Computer - Network Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Jura:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Network_Experience/css/style.css">
+</head>
+<body>
+    <!-- 1. Loader -->
+    <div id="loader">
+        <div class="terminal-loader">
+            <div class="boot-logo">SYS.ARCH // BOOT_SEQ</div>
+            <div class="boot-logs" id="boot-logs">
+                <div>> Initiating handshake...</div>
+            </div>
+            <div class="progress-wrap">
+                <div class="progress-bar">
+                    <div id="loader-bar"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="loader-percent">0</span>%<span class="blink">_</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Fixed header -->
+    <header class="site-header">
+        <nav>
+            <div class="logo">SYS.ARCH V.01</div>
+            <div class="links">
+                <a href="../CPU_Experience/index.html">CPU</a>
+                <a href="../RAM_Experience/index.html">RAM</a>
+                <a href="../GPU_Experience/index.html">GPU</a>
+                <a href="../Storage_Experience/index.html">Storage</a>
+                <a href="../Network_Experience/index.html" class="active">Network</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 3. Hero -->
+    <section class="hero-standalone">
+        <div class="hero-content">
+            <span class="section-label">005 / Global Grid</span>
+            <h1 class="hero-heading">
+                <span>Computer</span><br><span>Network</span><br><span>Interface</span>
+            </h1>
+            <p class="hero-tagline">The Bridge to the Infinite</p>
+            <div class="scroll-indicator">
+                <span>Establish Link</span>
+                <div class="arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Canvas -->
+    <div class="canvas-wrap">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- 5. Dark overlay -->
+    <div id="dark-overlay"></div>
+
+    <!-- 6. Marquee -->
+    <div class="marquee-wrap" data-scroll-speed="-25">
+        <div class="marquee-text">GLOBAL ROUTING • FIBER OPTIC TRANSMISSION • SECURE PROTOCOLS • </div>
+    </div>
+
+    <!-- 7. Scroll container -->
+    <div id="scroll-container">
+        
+        <!-- Section 1: Intro (Left aligned) -->
+        <section class="scroll-section section-content align-left" data-enter="15" data-leave="35" data-animation="fade-up">
+            <div class="section-inner">
+                <span class="section-label">002 / Reach</span>
+                <h2 class="section-heading">Web<br>Weaver</h2>
+                <p class="section-body">No computer exists in isolation anymore. The network interface card (NIC) translates internal digital logic into analog signals or light pulses, pushing data across the globe via vast physical webs.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Stats (Dark overlay) -->
+        <section class="scroll-section section-stats" data-enter="40" data-leave="55" data-animation="scale-up">
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number" data-value="10" data-decimals="0">0</span>
+                    <span class="stat-suffix">Gbps</span>
+                    <span class="stat-label">Throughput</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-value="2.4" data-decimals="1">0</span>
+                    <span class="stat-suffix">GHz</span>
+                    <span class="stat-label">Wireless Band</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Feature (Right aligned) -->
+        <section class="scroll-section section-content align-right" data-enter="60" data-leave="75" data-animation="slide-left">
+            <div class="section-inner">
+                <span class="section-label">003 / Protocols</span>
+                <h2 class="section-heading">Packet<br>Swarm</h2>
+                <p class="section-body">Files are sliced into millions of microscopic encrypted packets, routed efficiently through thousands of global server hops, and perfectly reassembled on the other side of the planet in milliseconds.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Final (Left aligned, persist) -->
+        <section class="scroll-section section-content align-left" data-enter="85" data-leave="100" data-animation="clip-reveal" data-persist="true">
+            <div class="section-inner">
+                <span class="section-label">004 / Conclusion</span>
+                <h2 class="section-heading">The Whole<br>System</h2>
+                <p class="section-body">CPU, RAM, GPU, Storage, and Network working in perfect, choreographed symphony. This is the heartbeat of the digital age.</p>
+                <a href="../CPU_Experience/index.html" class="cta-button">Restart System Tour</a>
+            </div>
+        </section>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="../Network_Experience/js/app.js"></script>
+</body>
+</html>

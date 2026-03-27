@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside a Computer - CPU Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Jura:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CPU_Experience/css/style.css">
+</head>
+<body>
+    <!-- 1. Loader -->
+    <div id="loader">
+        <div class="terminal-loader">
+            <div class="boot-logo">SYS.ARCH // BOOT_SEQ</div>
+            <div class="boot-logs" id="boot-logs">
+                <div>> Initiating handshake...</div>
+            </div>
+            <div class="progress-wrap">
+                <div class="progress-bar">
+                    <div id="loader-bar"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="loader-percent">0</span>%<span class="blink">_</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Fixed header -->
+    <header class="site-header">
+        <nav>
+            <div class="logo">SYS.ARCH V.01</div>
+            <div class="links">
+                <a href="../CPU_Experience/index.html" class="active">CPU</a>
+                <a href="../RAM_Experience/index.html">RAM</a>
+                <a href="../GPU_Experience/index.html">GPU</a>
+                <a href="../Storage_Experience/index.html">Storage</a>
+                <a href="../Network_Experience/index.html">Network</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 3. Hero -->
+    <section class="hero-standalone">
+        <div class="hero-content">
+            <span class="section-label">001 / Core Mechanism</span>
+            <h1 class="hero-heading">
+                <span>Central</span><br><span>Processing</span><br><span>Unit</span>
+            </h1>
+            <p class="hero-tagline">The Brain of the Machine</p>
+            <div class="scroll-indicator">
+                <span>Initiate Sequence</span>
+                <div class="arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Canvas -->
+    <div class="canvas-wrap">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- 5. Dark overlay -->
+    <div id="dark-overlay"></div>
+
+    <!-- 6. Marquee -->
+    <div class="marquee-wrap" data-scroll-speed="-25">
+        <div class="marquee-text">PROCESSING POWER • TRILLIONS OF CALCULATIONS • NANO-SCALE ARCHITECTURE • PROCESSING POWER • TRILLIONS OF CALCULATIONS </div>
+    </div>
+
+    <!-- 7. Scroll container -->
+    <div id="scroll-container">
+        
+        <!-- Section 1: Intro (Left aligned) -->
+        <section class="scroll-section section-content align-left" data-enter="15" data-leave="35" data-animation="fade-up">
+            <div class="section-inner">
+                <span class="section-label">002 / Architecture</span>
+                <h2 class="section-heading">Silicon<br>Mind</h2>
+                <p class="section-body">Every action on a computer begins here. Billions of microscopic transistors act as switches, processing complex logic at the speed of light.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Stats (Dark overlay) -->
+        <section class="scroll-section section-stats" data-enter="40" data-leave="55" data-animation="stagger-up">
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number" data-value="100" data-decimals="0">0</span>
+                    <span class="stat-suffix">Billion</span>
+                    <span class="stat-label">Transistors</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-value="5.5" data-decimals="1">0</span>
+                    <span class="stat-suffix">GHz</span>
+                    <span class="stat-label">Clock Speed</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Feature (Right aligned) -->
+        <section class="scroll-section section-content align-right" data-enter="60" data-leave="75" data-animation="slide-left">
+            <div class="section-inner">
+                <span class="section-label">003 / Cores</span>
+                <h2 class="section-heading">Parallel<br>Logic</h2>
+                <p class="section-body">Modern CPUs divide workloads across multiple cores, allowing applications, operating systems, and background tasks to compute simultaneously without bottlenecking.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Final (Left aligned, persist) -->
+        <section class="scroll-section section-content align-left" data-enter="85" data-leave="100" data-animation="clip-reveal" data-persist="true">
+            <div class="section-inner">
+                <span class="section-label">004 / Synergy</span>
+                <h2 class="section-heading">Data<br>Pipeline</h2>
+                <p class="section-body">The processor fetches, decodes, executes, and writes back instructions endlessly, orchestrating the entire system's operations.</p>
+                <a href="#" class="cta-button">Proceed to Memory</a>
+            </div>
+        </section>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="../CPU_Experience/js/app.js"></script>
+</body>
+</html>
