@@ -43,14 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loadFrames = async () => {
         const pad = (num, size) => ('000' + num).slice(-size);
-        for (let i = 1; i <= 10 && i <= FRAME_COUNT; i++) {
+        for (let i = 1; i <= FRAME_COUNT; i++) {
             await loadImage(i, pad(i, 4));
             updateLoader(i);
         }
         gsap.to("#loader", { yPercent: -100, duration: 1, ease: "power3.inOut" });
-        for (let i = 11; i <= FRAME_COUNT; i++) {
-            loadImage(i, pad(i, 4));
-        }
     };
 
     function loadImage(index, paddedStr) {
@@ -82,14 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     function updateLoader(loaded) {
-        const percent = Math.floor((loaded / 10) * 100); 
+        const percent = Math.floor((loaded / FRAME_COUNT) * 100); 
         document.getElementById("loader-bar").style.width = `${percent}%`;
         document.getElementById("loader-percent").textContent = percent;
         
-        if (loaded <= 10) {
+        if (loaded % Math.ceil(FRAME_COUNT / bootMessages.length) === 0 || loaded === 1) {
+            const msgIndex = Math.min(Math.floor((loaded / FRAME_COUNT) * bootMessages.length), bootMessages.length - 1);
             const logContainer = document.getElementById("boot-logs");
             if (logContainer) {
-                const msg = bootMessages[(loaded - 1) % bootMessages.length];
+                const msg = bootMessages[msgIndex];
                 const div = document.createElement("div");
                 div.textContent = msg;
                 logContainer.appendChild(div);
