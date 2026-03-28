@@ -1,5 +1,14 @@
 # SYS.ARCH V.01: Inside A Computer
 
+## Gallery
+<p align="center">
+  <img src="screenshots/Screenshot%202026-03-28%20103605.png" alt="Homepage Setup" width="800" />
+  <br/><br/>
+  <img src="screenshots/Screenshot%202026-03-28%20103642.png" alt="Component Overview" width="800" />
+  <br/><br/>
+  <img src="screenshots/Screenshot%202026-03-28%20103701.png" alt="Hardware Experience" width="800" />
+</p>
+
 ## Concept & Design Process
 
 **SYS.ARCH** is an immersive, high-fidelity interactive storytelling project designed to transport users deep into the micro-architecture of modern computing. Rather than resting on standard technological specifications, the user is invited to descend directly into core system components—the CPU, GPU, RAM, Storage, and Network modules—through a cinematic, scroll-driven journey.
