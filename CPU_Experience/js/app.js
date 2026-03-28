@@ -44,16 +44,21 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resize);
     resize();
 
-    // Wait for ALL frames to fully load before resolving preloader
+    // Wait for initial frames, let the remainder asynchronously download
     const loadFrames = async () => {
         const pad = (num, size) => ('000' + num).slice(-size);
+        const INITIAL_FRAMES = 15;
         
-        for (let i = 1; i <= FRAME_COUNT; i++) {
+        for (let i = 1; i <= INITIAL_FRAMES && i <= FRAME_COUNT; i++) {
             await loadImage(i, pad(i, 4));
             updateLoader(i);
         }
 
         gsap.to("#loader", { yPercent: -100, duration: 1, ease: "power3.inOut" });
+        
+        for (let i = INITIAL_FRAMES + 1; i <= FRAME_COUNT; i++) {
+            loadImage(i, pad(i, 4));
+        }
     };
 
     function loadImage(index, paddedStr) {
@@ -64,6 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (index === 1) { // Draw the very first frame immediately
                     sampleBgColor(img);
                     drawFrame(0);
+                }
+                if (index - 1 === currentFrame) {
+                    drawFrame(currentFrame);
                 }
                 resolve();
             };
@@ -86,12 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     function updateLoader(loaded) {
-        const percent = Math.floor((loaded / FRAME_COUNT) * 100); 
+        const INITIAL_FRAMES = 15;
+        const percent = Math.floor((loaded / INITIAL_FRAMES) * 100); 
         document.getElementById("loader-bar").style.width = `${percent}%`;
         document.getElementById("loader-percent").textContent = percent;
         
-        if (loaded % Math.ceil(FRAME_COUNT / bootMessages.length) === 0 || loaded === 1) {
-            const msgIndex = Math.min(Math.floor((loaded / FRAME_COUNT) * bootMessages.length), bootMessages.length - 1);
+        if (loaded % Math.ceil(INITIAL_FRAMES / bootMessages.length) === 0 || loaded === 1) {
+            const msgIndex = Math.min(Math.floor((loaded / INITIAL_FRAMES) * bootMessages.length), bootMessages.length - 1);
             const logContainer = document.getElementById("boot-logs");
             if (logContainer) {
                 const msg = bootMessages[msgIndex];
